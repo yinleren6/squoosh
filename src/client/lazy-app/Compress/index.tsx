@@ -431,7 +431,7 @@ export default class Compress extends Component<Props, State> {
       sides: cleanSet(this.state.sides, otherIndex, newSettings),
     });
 
-    const result = await this.props.showSnack('Settings copied across', {
+    const result = await this.props.showSnack('设置已复制', {
       timeout: 5000,
       actions: ['undo', 'dismiss'],
     });
@@ -457,7 +457,7 @@ export default class Compress extends Component<Props, State> {
       localStorage.setItem('leftSideSettings', leftSideSettings);
       // Firing an event when we save side settings in localstorage
       window.dispatchEvent(new CustomEvent('leftSideSettings'));
-      await this.props.showSnack('Left side settings saved', {
+      await this.props.showSnack('已保存左侧设置', {
         timeout: 1500,
         actions: ['dismiss'],
       });
@@ -472,7 +472,7 @@ export default class Compress extends Component<Props, State> {
       localStorage.setItem('rightSideSettings', rightSideSettings);
       // Firing an event when we save side settings in localstorage
       window.dispatchEvent(new CustomEvent('rightSideSettings'));
-      await this.props.showSnack('Right side settings saved', {
+      await this.props.showSnack('已保存右侧设置', {
         timeout: 1500,
         actions: ['dismiss'],
       });
@@ -499,7 +499,7 @@ export default class Compress extends Component<Props, State> {
       this.setState({
         sides: cleanSet(this.state.sides, index, newLeftSideSettings),
       });
-      const result = await this.props.showSnack('Left side settings imported', {
+      const result = await this.props.showSnack('已导入左侧设置', {
         timeout: 3000,
         actions: ['undo', 'dismiss'],
       });
@@ -520,13 +520,10 @@ export default class Compress extends Component<Props, State> {
       this.setState({
         sides: cleanSet(this.state.sides, index, newRightSideSettings),
       });
-      const result = await this.props.showSnack(
-        'Right side settings imported',
-        {
-          timeout: 3000,
-          actions: ['undo', 'dismiss'],
-        },
-      );
+      const result = await this.props.showSnack('已导入右侧设置', {
+        timeout: 3000,
+        actions: ['undo', 'dismiss'],
+      });
       if (result === 'undo') {
         this.setState({
           sides: cleanSet(this.state.sides, index, oldRightSideSettings),
@@ -724,7 +721,7 @@ export default class Compress extends Component<Props, State> {
         });
       } catch (err) {
         if (err instanceof Error && err.name === 'AbortError') return;
-        this.props.showSnack(`Source decoding error: ${err}`);
+        this.props.showSnack(`解码失败: ${err}`);
         throw err;
       }
     } else {
@@ -783,7 +780,7 @@ export default class Compress extends Component<Props, State> {
       } catch (err) {
         if (err instanceof Error && err.name === 'AbortError') return;
         this.setState({ loading: false });
-        this.props.showSnack(`Preprocessing error: ${err}`);
+        this.props.showSnack(`预处理错误: ${err}`);
         throw err;
       }
     } else {
@@ -912,7 +909,7 @@ export default class Compress extends Component<Props, State> {
           });
           return { sides };
         });
-        this.props.showSnack(`Processing error: ${err}`);
+        this.props.showSnack(`处理出错: ${err}`);
         throw err;
       }
     });
