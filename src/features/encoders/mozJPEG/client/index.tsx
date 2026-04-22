@@ -114,7 +114,7 @@ export class Options extends Component<Props, State> {
             value={options.quality}
             onInput={this.onChange}
           >
-            质量4:
+            质量:
           </Range>
         </div>
         <label class={style.optionReveal}>

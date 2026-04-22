@@ -46,7 +46,7 @@ export function qualityOption(
               value={options.quality}
               onInput={this.onChange}
             >
-              质量1:
+              Quality:
             </Range>
           </div>
         </div>

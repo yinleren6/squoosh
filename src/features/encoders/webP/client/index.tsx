@@ -222,7 +222,7 @@ export class Options extends Component<Props, State> {
             value={options.quality}
             onInput={this.onChange}
           >
-            质量5:
+            Quality:
           </Range>
         </div>
         <label class={style.optionReveal}>

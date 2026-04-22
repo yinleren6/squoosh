@@ -188,7 +188,7 @@ export class Options extends Component<Props, State> {
                   value={quality}
                   onInput={this._inputChange('quality', 'number')}
                 >
-                  质量6:
+                  Quality:
                 </Range>
               </div>
               <label class={style.optionToggle}>
@@ -208,7 +208,7 @@ export class Options extends Component<Props, State> {
                       value={alphaQuality}
                       onInput={this._inputChange('alphaQuality', 'number')}
                     >
-                      Alpha 质量7:
+                      Alpha Quality:
                     </Range>
                   </div>
                 )}

@@ -191,7 +191,7 @@ export class Options extends Component<Props, State> {
                 value={quality}
                 onInput={this._inputChange('quality', 'number')}
               >
-                质量2:
+                Quality:
               </Range>
             </div>
           )}
