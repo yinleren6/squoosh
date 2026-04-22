@@ -28,7 +28,7 @@ const Index: FunctionalComponent<Props> = () => (
   <html lang="zh-CN">
     <head>
       <title>Squoosh</title>
-      <meta charset="utf-8"></meta>
+      <meta charSet="utf-8"></meta>
       <meta
         name="description"
         content="Squoosh is the ultimate image optimizer that allows you to compress and compare images with different codecs in your browser."
